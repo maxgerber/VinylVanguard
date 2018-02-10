@@ -1,3 +1,17 @@
-import React from "react"
+import React from 'react';
+import styled, { injectGlobal } from 'styled-components';
 
-export default () => <div>Hello world!</div>
+const Container = styled.main`
+  display: flex;
+  ${'' /* align-items: center; */} justify-content: center;
+  height: 95vh;
+  overflow: auto;
+`;
+const Title = styled.h1`
+  text-transform: uppercase;
+`;
+export default () => (
+  <Container>
+    <Title>Vinyl Vanguard</Title>
+  </Container>
+);
