@@ -4,6 +4,7 @@ import MainFont from '../assets/fonts/main-font.ttf';
 import SplashImage from '../assets/images/looking-for-vinyl.png';
 
 injectGlobal`
+  @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400');
   @font-face {
     font-family: 'DIN Condensed Bold';
     src: url('${MainFont}');
@@ -29,7 +30,7 @@ const Container = styled.main`
 `;
 const Title = styled.h1`
   font-size: calc(2rem + 4vw);
-  margin: 1rem 0 0 0;
+  margin: 2rem 0 0 0;
   text-align: center;
   color: var(--black);
   text-transform: uppercase;
@@ -40,6 +41,7 @@ const Subtitle = styled.h2`
   text-align: center;
   text-transform: lowercase;
   color: var(--blue);
+  line-height: 0.7;
 `;
 const BackgroundImg = styled.div`
   background: url("${props => (props.src ? props.src : '')}");
@@ -54,7 +56,7 @@ const BackgroundImg = styled.div`
 const ButtonElement = styled.button`
   font-family: var(--MainFont);
   font-size: calc(1rem + 3vw);
-  padding: 0.5rem 1.5rem;
+  padding: 1rem 2rem;
   margin: 0 1.5rem;
   border-radius: 5%;
   text-transform: uppercase;
@@ -80,21 +82,33 @@ const Button = ({ text }) => {
   );
 };
 
-const ButtonContainer = styled.div`
+const ButtonContainer = styled.nav`
   width: 100%;
   position: absolute;
   text-align: center;
   bottom: 3rem;
 `;
 
+const AddressHeading = styled.section`
+  font-family: 'Open Sans';
+  font-weight: 300;
+  font-size: 1.8rem;
+  letter-spacing: 0.05rem;
+  margin: 3rem 0 0.5rem 0;
+  text-align: center;
+`;
+
 export default () => (
   <Container>
     <Title>Vinyl Vanguard</Title>
     <Subtitle>Stylus over Substance</Subtitle>
+    <AddressHeading>
+      Wood Street Indoor Market, Walthamstow, London E17 3HX
+    </AddressHeading>
     <BackgroundImg src={SplashImage}>
       <ButtonContainer>
-        <Button text="Buy" />
-        <Button text="Sell" />
+        <Button text="Buy/Sell" />
+        <Button text="About Us" />
       </ButtonContainer>
     </BackgroundImg>
   </Container>
