@@ -5,7 +5,9 @@
   "scripts": {
     "develop": "gatsby develop",
     "build": "gatsby build",
-    "serve": "gatsby serve"
+    "serve": "gatsby serve",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "dependencies": {
     "gatsby": "^1.9.153",
@@ -14,6 +16,8 @@
     "gatsby-plugin-styled-components": "^2.0.5",
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-transformer-remark": "^1.7.28",
-    "styled-components": "^3.1.6"
-  }
+    "styled-components": "^3.1.6",
+    "snyk": "^1.88.0"
+  },
+  "snyk": true
 }
